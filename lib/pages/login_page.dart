@@ -60,24 +60,22 @@ class _LoginPageState extends State<LoginPage> {
                       },
                       child: AnimatedContainer(
                         duration: const Duration(seconds: 1),
-                        child: Container(
-                          height: 40,
-                          width: changeButton ? 40 : 150,
-                          alignment: Alignment.center,
-                          child: changeButton
-                              ? const Icon(Icons.done, color: Colors.white)
-                              : const Text(
-                                  "Login",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14),
-                                ),
-                          decoration: BoxDecoration(
-                              color: Colors.purple,
-                              borderRadius:
-                                  BorderRadius.circular(changeButton ? 50 : 6)),
-                        ),
+                        height: 40,
+                        width: changeButton ? 40 : 150,
+                        alignment: Alignment.center,
+                        child: changeButton
+                            ? const Icon(Icons.done, color: Colors.white)
+                            : const Text(
+                                "Login",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14),
+                              ),
+                        decoration: BoxDecoration(
+                            color: Colors.purple,
+                            borderRadius:
+                                BorderRadius.circular(changeButton ? 50 : 6)),
                       ),
                     )
                     // ElevatedButton(
