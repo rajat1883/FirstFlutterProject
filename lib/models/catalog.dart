@@ -2,6 +2,11 @@ import 'dart:convert';
 
 class CatalogModel {
   static List<Item> items = [];
+
+  Item? getById(int id) =>
+      items.firstWhereOrNull((element) => element.id == id);
+
+  Item? getByPosition(int pos) => items[pos];
 }
 
 class Item {
@@ -84,5 +89,14 @@ class Item {
         price.hashCode ^
         color.hashCode ^
         image.hashCode;
+  }
+}
+
+extension FirstWhereOrNullExtension<E> on Iterable<E> {
+  E? firstWhereOrNull(bool Function(E) test) {
+    for (E element in this) {
+      if (test(element)) return element;
+    }
+    return null;
   }
 }
